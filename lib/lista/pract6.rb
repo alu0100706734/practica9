@@ -37,5 +37,11 @@ require "lista/version"
 		@titulo <=> other.titulo
 		@fecha <=> other.fecha
 	end
+	
+	def ==(other)
+		@autor == other.autor
+		@titulo == other.titulo
+		@fecha == other.fecha
+	end
     end
 
