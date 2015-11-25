@@ -11,6 +11,7 @@ describe Pract6 do
 	@lib2 = Libros.new(["Hola","Paco"],"numero 1", "numero 2", "numero 3", "numero 4", "numero 5", ["11233","123312312"])
 	@lista = Lista.new()
 	@lista.push(@lib)
+	@lista.push(@lib2)
 	@rev = Revista.new("Alfonso","Cosmos","(Sept 19, 2015)","123456", "Magik","4th Edition", "1233-12323123")
 	@rev3 = Revista.new("Alfonso","Cosmos","(Sept 19, 2015)","123456", "Magik","4th Edition", "1233-12323123")
 	@rev2 = Revista.new("Benito","Analogia","(Ene 20, 2014)","654321", "Aluncinant","1th Edition", "3123-555466")
@@ -31,14 +32,14 @@ describe Pract6 do
 	
 		it "Se puede extraer un elemento" do
 		aux = @lista.pop()
-		expect(aux.value).to eq(@lib)
+		expect(aux).to eq(@lib)
 		end		
 
 		it "Se puede insertar un elemento" do	
 		@lista.push(@lib2)
 		aux = @lista.pop()
 		aux2 = @lista.pop()
-		expect(aux2.value).to eq(@lib2)
+		expect(aux2).to eq(@lib2)
 		end
 		
 		it 'Comprueba que la clase Libro tiene como padre Pract6' do
@@ -73,11 +74,29 @@ describe Pract6 do
 	end
 
 	describe "Enumerable" do
-		it "Probando enumerable" do
-			expect(@lista.any).to eq(true)
+		it "Existe alguna lista" do
+			expect(@lista.any?).to eq(true)
 
-		end	
+		end
 
+		it "Probando find" do
+			expect(@lista.find{|i| i ==@lib}).to eq(@lib)
+		end
+		
+		it "Probando max" do
+			aux = @lista.pop()
+			expect(@lista.max).to eq(@lista.pop())
+		end
+
+		it "Probando min" do
+			aux = @lista.pop()
+			expect(@lista.min).to eq(@lista.pop())
+		end
+		
+		it "Probando sort" do
+			vector = [@lib,@lib2]
+			expect(@lista.sort).to eq(vector)
+		end 
 	end
 
 end
