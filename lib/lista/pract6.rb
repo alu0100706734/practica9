@@ -36,8 +36,5 @@ require "lista/version"
 		@autor <=> other.autor
 	end
 	
-	def ==(other)
-		@autor == other.autor
-	end
     end
 
