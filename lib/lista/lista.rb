@@ -43,9 +43,17 @@ class Lista
 		end
 	end
 
-	
-
-
-
+	def each()
+		if @head == nil
+			yield nil
+		else
+			aux = @head
+			while(aux != nil)
+				yield aux.value
+				aux = aux.next	
+			end
+		end
+	end
+		
 
 end

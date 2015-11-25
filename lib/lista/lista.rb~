@@ -28,19 +28,32 @@ class Lista
 
 
 	def pop()
-		if @head != nil
+		if @head == nil
+			return nil
+		elsif @head == @tail
+			aux = @head
+			@head = nil
+			@tail = nil
+			return aux			
+		else
 			aux = @head
 			@head = @head.next
 			@head.prev = nil
-			return aux
-		else
-			return nil
+			return aux		
 		end
 	end
 
-	
-
-
-
+	def each()
+		if @head == nil
+			yield nil
+		else
+			aux = @head
+			while(aux != nil)
+				yield aux
+				aux = aux.next	
+			end
+		end
+	end
+		
 
 end
