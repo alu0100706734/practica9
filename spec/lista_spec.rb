@@ -12,6 +12,9 @@ describe Pract6 do
 	@lista = Lista.new()
 	@lista.push(@lib)
 	@rev = Revista.new("Alfonso","Cosmos","(Sept 19, 2015)","123456", "Magik","4th Edition", "1233-12323123")
+	@rev3 = Revista.new("Alfonso","Cosmos","(Sept 19, 2015)","123456", "Magik","4th Edition", "1233-12323123")
+	@rev2 = Revista.new("Benito","Analogia","(Ene 20, 2014)","654321", "Aluncinant","1th Edition", "3123-555466")
+
 	end
 
 	describe "Bibilo" do
@@ -54,5 +57,21 @@ describe Pract6 do
 		@lista.tail
 		end
 	end
+	
+	describe "Comparable" do
+		
+		it "Probando operador >" do
+			expect(@lib < @lib2).to eq (true)
+		end
+		
+		it "Probando operador ==" do
+			expect(@rev == @rev3).to eq(true)
+		end
+		it "Probando operador <" do
+			expect(@rev < @rev2).to eq (true)
+		end
+
+	end
+
 end
 
