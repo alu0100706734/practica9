@@ -49,7 +49,7 @@ class Lista
 		else
 			aux = @head
 			while(aux != nil)
-				yield aux
+				yield aux.value
 				aux = aux.next	
 			end
 		end

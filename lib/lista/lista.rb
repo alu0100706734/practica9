@@ -34,12 +34,12 @@ class Lista
 			aux = @head
 			@head = nil
 			@tail = nil
-			return aux			
+			return aux.value			
 		else
 			aux = @head
 			@head = @head.next
 			@head.prev = nil
-			return aux		
+			return aux.value		
 		end
 	end
 
