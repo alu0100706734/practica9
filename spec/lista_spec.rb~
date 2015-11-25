@@ -68,8 +68,15 @@ describe Pract6 do
 			expect(@rev == @rev3).to eq(true)
 		end
 		it "Probando operador <" do
-			expect(@rev < @rev2).to eq (false)
+			expect(@rev < @rev2).to eq (true)
 		end
+	end
+
+	describe "Enumerable" do
+		it "Probando enumerable" do
+			expect(@lista.any).to eq(true)
+
+		end	
 
 	end
 
