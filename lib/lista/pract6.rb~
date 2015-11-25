@@ -31,13 +31,7 @@ require "lista/version"
          referencia = getAutor().to_s + '\n' + getTitulo().to_s + '\n' + getFecha().to_s + '\n' 
          referencia
        end
-      def <=>(other)
-		#return nil unless other.instance_of? Pract6 	
-		@autor <=> other.autor
-		@titulo <=> other.titulo
-		@fecha <=> other.fecha
-       end
-       
+
   
     end
 
