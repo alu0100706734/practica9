@@ -1,3 +1,6 @@
+#!/bin/env ruby
+# encoding: utf-8
+
 require 'lista.rb'
 require 'lista/pract6.rb'
 require 'spec_helper'

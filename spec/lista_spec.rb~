@@ -97,6 +97,7 @@ describe Pract6 do
 			vector = [@lib,@lib2]
 			expect(@lista.sort).to eq(vector)
 		end 
+	
 	end
 
 end
